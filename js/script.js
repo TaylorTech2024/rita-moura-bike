@@ -1,31 +1,39 @@
-// PRELOADER
-window.addEventListener("load",()=>{
-document.body.classList.add("loaded");
-});
+/* ANIMAÇÃO SCROLL PROFISSIONAL */
 
-// SCROLL SUAVE
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-anchor.addEventListener("click", function(e){
-e.preventDefault();
-document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth"});
-});
-});
+const elementos =
+document.querySelectorAll(".animar");
 
-// ANIMAÇÃO AO ROLAR
-const elementos=document.querySelectorAll(".card, section");
-function animar(){
-const topo=window.innerHeight*0.85;
-elementos.forEach(el=>{
-const pos=el.getBoundingClientRect().top;
-if(pos<topo){el.classList.add("mostrar");}
-});
+const observer = new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+entry.target.classList.add("ativo");
 }
-window.addEventListener("scroll",animar);
-animar();
 
-// BOTÃO WHATSAPP
-document.querySelectorAll(".btn, .btn-menu").forEach(btn=>{
-btn.addEventListener("click",()=>{
-window.open("https://wa.me/5581984970358","_blank");
 });
+
+},
+{
+threshold:0.2
+}
+);
+
+elementos.forEach(el=>{
+observer.observe(el);
+});
+
+
+/* PARALLAX HERO */
+
+window.addEventListener("scroll",()=>{
+
+const hero = document.querySelector(".hero");
+
+let scroll = window.pageYOffset;
+
+hero.style.backgroundPositionY =
+scroll * 0.4 + "px";
+
 });
