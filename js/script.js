@@ -1,22 +1,39 @@
+/* ANIMAÇÃO SCROLL PROFISSIONAL */
+
 const elementos =
-document.querySelectorAll(".card, h2, .contato p");
+document.querySelectorAll(".animar");
 
-function animarScroll(){
+const observer = new IntersectionObserver(
+(entries)=>{
 
-const topoTela = window.innerHeight * 0.85;
+entries.forEach(entry=>{
 
-elementos.forEach(el => {
-
-const posicao = el.getBoundingClientRect().top;
-
-if(posicao < topoTela){
-el.classList.add("mostrar");
+if(entry.isIntersecting){
+entry.target.classList.add("ativo");
 }
 
 });
 
+},
+{
+threshold:0.2
 }
+);
 
-window.addEventListener("scroll", animarScroll);
+elementos.forEach(el=>{
+observer.observe(el);
+});
 
-animarScroll();
+
+/* PARALLAX HERO */
+
+window.addEventListener("scroll",()=>{
+
+const hero = document.querySelector(".hero");
+
+let scroll = window.pageYOffset;
+
+hero.style.backgroundPositionY =
+scroll * 0.4 + "px";
+
+});
