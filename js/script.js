@@ -1,10 +1,9 @@
-// ===== Preloader =====
+// Preloader
 window.addEventListener("load", () => {
-  const pre = document.getElementById("preloader");
-  pre.classList.add("hide");
+  document.getElementById("preloader").classList.add("hide");
 });
 
-// ===== Mobile menu =====
+// Mobile menu
 const burger = document.getElementById("burger");
 const menuMobile = document.getElementById("menuMobile");
 
@@ -22,17 +21,17 @@ burger.addEventListener("click", () => {
   menuMobile.setAttribute("aria-hidden", isOpen ? "false" : "true");
 });
 
-// ===== Header on scroll =====
+// Header on scroll
 const header = document.getElementById("header");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 30) header.classList.add("scrolled");
   else header.classList.remove("scrolled");
 });
 
-// ===== Smooth scroll (Apple-like easing) =====
+// Smooth scroll (Apple-like easing)
 function easeInOutCubic(t){ return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t + 2, 3)/2; }
 
-function smoothScrollTo(targetY, duration = 900) {
+function smoothScrollTo(targetY, duration = 950) {
   const startY = window.scrollY;
   const diff = targetY - startY;
   const startTime = performance.now();
@@ -63,11 +62,11 @@ document.querySelectorAll("[data-scroll]").forEach(a => {
 
     const headerOffset = 86;
     const y = getOffsetTop(el) - headerOffset;
-    smoothScrollTo(y, 950);
+    smoothScrollTo(y, 980);
   });
 });
 
-// ===== Reveal on scroll (IntersectionObserver) =====
+// Efeito ao rolar (Reveal)
 const revealEls = document.querySelectorAll(".anim");
 const obs = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
@@ -76,10 +75,3 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.18 });
 
 revealEls.forEach(el => obs.observe(el));
-
-// ===== Parallax hero background =====
-const heroBg = document.querySelector(".hero-bg");
-window.addEventListener("scroll", () => {
-  const y = window.scrollY * 0.18; // slowed parallax
-  heroBg.style.transform = `translate3d(0, ${y}px, 0) scale(1.06)`;
-});
