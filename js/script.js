@@ -1,39 +1,40 @@
-/* ANIMAÇÃO SCROLL PROFISSIONAL */
+// SCROLL SUAVE ESTILO APPLE
 
-const elementos =
-document.querySelectorAll(".animar");
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-const observer = new IntersectionObserver(
-(entries)=>{
+anchor.addEventListener("click", function(e){
 
-entries.forEach(entry=>{
+e.preventDefault();
 
-if(entry.isIntersecting){
-entry.target.classList.add("ativo");
-}
+document.querySelector(this.getAttribute("href"))
+.scrollIntoView({
+behavior:"smooth"
+});
 
 });
 
-},
-{
-threshold:0.2
-}
-);
+});
+
+
+// ANIMAÇÃO AO ROLAR
+
+const elementos = document.querySelectorAll(".card");
+
+function animar(){
+
+const topoTela = window.innerHeight * 0.85;
 
 elementos.forEach(el=>{
-observer.observe(el);
-});
 
+const posicao = el.getBoundingClientRect().top;
 
-/* PARALLAX HERO */
-
-window.addEventListener("scroll",()=>{
-
-const hero = document.querySelector(".hero");
-
-let scroll = window.pageYOffset;
-
-hero.style.backgroundPositionY =
-scroll * 0.4 + "px";
+if(posicao < topoTela){
+el.classList.add("mostrar");
+}
 
 });
+
+}
+
+window.addEventListener("scroll", animar);
+animar();
