@@ -1,129 +1,160 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rita e Moura Bike</title>
+  <meta name="description" content="Venda de bicicletas, peças e oficina especializada no Ibura Recife." />
 
-<title>Rita e Moura Bike | Loja Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
+  <!-- PRELOADER -->
+  <div id="preloader" aria-hidden="true">
+    <div class="loader-wrap">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Carregando...</div>
+    </div>
+  </div>
 
-<!-- HEADER -->
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container-header">
+      <a class="brand" href="#home" data-scroll="#home" aria-label="Ir para Home">
+        <img src="img/logo.PNG" class="logo" alt="Rita e Moura Bike" />
+      </a>
 
-<header class="header">
+      <nav class="menu" aria-label="Menu principal">
+        <a href="#home" data-scroll="#home">Home</a>
+        <a href="#servicos" data-scroll="#servicos">Serviços</a>
+        <a href="#local" data-scroll="#local">Localização</a>
+        <a href="#contato" data-scroll="#contato">Contato</a>
+        <a class="btn-menu" href="https://wa.me/5581984970358" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
 
-<div class="container-header">
+      <!-- MENU MOBILE -->
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menuMobile">
+        <span></span><span></span>
+      </button>
+    </div>
 
-<img src="img/logo.PNG" class="logo">
+    <div class="menu-mobile" id="menuMobile" aria-hidden="true">
+      <a href="#home" data-scroll="#home">Home</a>
+      <a href="#servicos" data-scroll="#servicos">Serviços</a>
+      <a href="#local" data-scroll="#local">Localização</a>
+      <a href="#contato" data-scroll="#contato">Contato</a>
+      <a class="btn-mobile" href="https://wa.me/5581984970358" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+  </header>
 
-<nav class="menu">
-<a href="#home">Home</a>
-<a href="#servicos">Serviços</a>
-<a href="#local">Localização</a>
-<a href="#contato" class="btn-menu">Contato</a>
-</nav>
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-</div>
+    <div class="hero-content anim">
+      <h1 class="title-reveal">
+        <span>Rita e Moura</span>
+        <span class="accent">Bike</span>
+      </h1>
 
-</header>
+      <p class="hero-sub">
+        Loja e oficina premium no Ibura. Bikes, peças e manutenção especializada com qualidade e confiança.
+      </p>
 
-<!-- HERO -->
+      <div class="hero-actions">
+        <a class="btn" href="#servicos" data-scroll="#servicos">Ver serviços</a>
+        <a class="btn ghost" href="https://wa.me/5581984970358" target="_blank" rel="noopener">Agendar no WhatsApp</a>
+      </div>
 
-<section id="home" class="hero">
+      <div class="scroll-hint" aria-hidden="true">
+        <div class="dot"></div>
+        <span>Role para ver mais</span>
+      </div>
+    </div>
+  </section>
 
-<div class="overlay animar">
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section">
+    <div class="section-inner">
+      <h2 class="h2 anim">Nossos Serviços</h2>
+      <p class="lead anim">Tudo que sua bike precisa — com acabamento de loja premium.</p>
 
-<h1>Rita e Moura Bike</h1>
+      <div class="cards">
+        <div class="card anim">
+          <h3>🔧 Oficina Especializada</h3>
+          <p>Revisão completa, regulagem e manutenção profissional.</p>
+        </div>
 
-<p>
-Venda de bicicletas, peças, acessórios e manutenção especializada.
-Performance e confiança em cada pedal.
-</p>
+        <div class="card anim">
+          <h3>🚴 Venda de Bikes</h3>
+          <p>Bicicletas novas e seminovas com confiança e procedência.</p>
+        </div>
 
-<a class="btn"
-href="https://wa.me/5581984970358"
-target="_blank">
-Agendar no WhatsApp
-</a>
+        <div class="card anim">
+          <h3>⚙️ Peças e Acessórios</h3>
+          <p>Componentes, upgrades e acessórios para performance e segurança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <!-- LOCAL -->
+  <section id="local" class="section">
+    <div class="section-inner">
+      <h2 class="h2 anim">Onde Estamos</h2>
+      <p class="lead anim">Av. Engenho Serra Verde, 690 – Loja A • Ibura • Cohab UR-03</p>
 
-</section>
+      <div class="map-wrap anim">
+        <iframe
+          src="https://www.google.com/maps?q=Av.+Engenho+Serra+Verde,+690,+Recife&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa - Rita e Moura Bike"
+        ></iframe>
+      </div>
+    </div>
+  </section>
 
-<!-- SERVIÇOS -->
+  <!-- CONTATO -->
+  <section id="contato" class="section">
+    <div class="section-inner">
+      <h2 class="h2 anim">Contato</h2>
+      <div class="contact-grid">
+        <div class="contact-card anim">
+          <p><strong>📞 Telefone/WhatsApp</strong></p>
+          <p>(81) 98497-0358</p>
+          <a class="btn small" href="https://wa.me/5581984970358" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        </div>
 
-<section id="servicos" class="servicos">
+        <div class="contact-card anim">
+          <p><strong>📍 Endereço</strong></p>
+          <p>Av. Engenho Serra Verde, 690 – Loja A</p>
+          <p>Ibura • Recife</p>
+          <a class="btn small ghost" href="#local" data-scroll="#local">Abrir mapa</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<h2 class="animar">Nossos Serviços</h2>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="img/logo.PNG" class="footer-logo" alt="Rita e Moura Bike" />
+      <p>Rita e Moura Bike © 2026</p>
+    </div>
+  </footer>
 
-<div class="cards">
+  <!-- FLOAT WHATS -->
+  <a class="whatsapp-float" href="https://wa.me/5581984970358" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+    💬
+  </a>
 
-<div class="card animar">
-<h3>🔧 Oficina Especializada</h3>
-<p>Revisão completa e manutenção profissional.</p>
-</div>
-
-<div class="card animar">
-<h3>🚴 Venda de Bikes</h3>
-<p>Bicicletas novas e seminovas.</p>
-</div>
-
-<div class="card animar">
-<h3>⚙️ Peças e Acessórios</h3>
-<p>Upgrade completo para sua bike.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- MAPA -->
-
-<section id="local" class="mapa">
-
-<h2 class="animar">Onde Estamos</h2>
-
-<iframe
-src="https://www.google.com/maps?q=Av.+Engenho+Serra+Verde,+690,+Recife&output=embed">
-</iframe>
-
-</section>
-
-<!-- CONTATO -->
-
-<section id="contato" class="contato">
-
-<h2 class="animar">Fale Conosco</h2>
-
-<p class="animar">📍 Av. Engenho Serra Verde, 690 – Loja A</p>
-<p class="animar">Ibura • Cohab UR-03</p>
-<p class="animar">📞 (81) 98497-0358</p>
-
-<a class="btn animar"
-href="https://wa.me/5581984970358"
-target="_blank">
-Chamar no WhatsApp
-</a>
-
-</section>
-
-<footer>
-<p>Rita e Moura Bike © 2026</p>
-</footer>
-
-<a class="whatsapp"
-href="https://wa.me/5581984970358"
-target="_blank">
-💬
-</a>
-
-<script src="js/script.js"></script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
