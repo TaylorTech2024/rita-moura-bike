@@ -1,6 +1,7 @@
-const elementos = document.querySelectorAll(".card, h2");
+const elementos =
+document.querySelectorAll(".card, h2, .contato p");
 
-window.addEventListener("scroll", () => {
+function animarScroll(){
 
 const topoTela = window.innerHeight * 0.85;
 
@@ -14,4 +15,8 @@ el.classList.add("mostrar");
 
 });
 
-});
+}
+
+window.addEventListener("scroll", animarScroll);
+
+animarScroll();
