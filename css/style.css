@@ -57,25 +57,22 @@ height:100vh;
 background:
 linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
 url("../img/loja.JPEG") center/cover no-repeat;
+background-attachment:fixed;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 }
 
-.overlay{
-animation:fadeUp 1.2s ease;
-max-width:700px;
-}
-
 .hero h1{
 font-size:60px;
 color:#FFD000;
-margin-bottom:10px;
 }
 
 .hero p{
 font-size:18px;
+max-width:600px;
+margin:auto;
 }
 
 .btn{
@@ -87,12 +84,12 @@ border-radius:40px;
 font-weight:bold;
 display:inline-block;
 margin-top:25px;
-transition:.3s;
+transition:.4s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 20px #FFD000;
+box-shadow:0 0 25px #FFD000;
 }
 
 /* SERVIÇOS */
@@ -114,16 +111,14 @@ background:#000;
 padding:25px;
 border-radius:12px;
 width:280px;
-transition:.4s;
 border:1px solid transparent;
-opacity:0;
-transform:translateY(40px);
+transition:.5s;
 }
 
 .card:hover{
-transform:translateY(-10px);
+transform:translateY(-15px) scale(1.03);
 border:1px solid #FFD000;
-box-shadow:0 0 25px rgba(255,208,0,.3);
+box-shadow:0 20px 40px rgba(255,208,0,.25);
 }
 
 /* MAPA */
@@ -147,12 +142,6 @@ padding:80px 20px;
 text-align:center;
 }
 
-.contato p{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
 /* FOOTER */
 
 footer{
@@ -161,7 +150,7 @@ padding:20px;
 text-align:center;
 }
 
-/* WHATS */
+/* WHATSAPP */
 
 .whatsapp{
 position:fixed;
@@ -176,26 +165,23 @@ text-decoration:none;
 animation:pulse 2s infinite;
 }
 
-/* ANIMAÇÕES */
+/* ANIMAÇÕES SCROLL */
 
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
+.animar{
+opacity:0;
+transform:translateY(80px) scale(.98);
+transition:
+opacity 1.2s ease,
+transform 1.2s cubic-bezier(.17,.67,.3,1);
+}
+
+.animar.ativo{
+opacity:1;
+transform:translateY(0) scale(1);
 }
 
 @keyframes pulse{
 0%{transform:scale(1);}
 50%{transform:scale(1.1);}
 100%{transform:scale(1);}
-}
-
-h2{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.mostrar{
-opacity:1!important;
-transform:translateY(0)!important;
 }
