@@ -5,322 +5,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RITA MOURA BIKE</title>
+<title>Rita e Moura Bike</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
 
-<style>
-
-/* RESET */
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-html{
-scroll-behavior:auto;
-}
-
-body{
-background:#000;
-color:#fff;
-overflow-x:hidden;
-}
-
-/*  NAV  */
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:rgba(0,0,0,.4);
-backdrop-filter:blur(25px);
-z-index:999;
-transition:.6s;
-}
-
-nav img{
-height:45px;
-}
-
-nav a{
-margin-left:25px;
-text-decoration:none;
-color:white;
-transition:.4s;
-}
-
-nav a:hover{
-opacity:.6;
-}
-
-/*  HERO COM FOTO  */
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-text-align:center;
-position:relative;
-overflow:hidden;
-}
-
-.hero::before{
-content:"";
-position:absolute;
-width:100%;
-height:120%;
-background:url("loja.JPEG") center/cover no-repeat;
-transform:scale(1.2);
-z-index:-2;
-transition:transform .2s linear;
-}
-
-.hero::after{
-content:"";
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(180deg,rgba(0,0,0,.2),#000);
-z-index:-1;
-}
-
-h1{
-font-size:52px;
-letter-spacing:3px;
-margin-bottom:20px;
-}
-
-/*  BOTÃO ANIMADO  */
-
-.btn{
-margin-top:30px;
-padding:16px 40px;
-border-radius:40px;
-border:none;
-font-weight:600;
-cursor:pointer;
-background:white;
-color:black;
-transition:.5s cubic-bezier(.22,1,.36,1);
-}
-
-.btn:hover{
-transform:translateY(-3px) scale(1.05);
-box-shadow:0 20px 40px rgba(255,255,255,.2);
-}
-
-/*  SECTIONS  */
-
-section{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-padding:120px 20px;
-opacity:0;
-transform:translateY(120px);
-transition:1.4s cubic-bezier(.22,1,.36,1);
-}
-
-section.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/*  CARDS  */
-
-.cards{
-display:flex;
-gap:30px;
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.card{
-background:#111;
-padding:30px;
-border-radius:20px;
-width:260px;
-transition:.6s cubic-bezier(.22,1,.36,1);
-}
-
-.card:hover{
-transform:translateY(-15px) scale(1.04);
-background:#1b1b1b;
-}
-
-/*  MAP  */
-
-iframe{
-width:90%;
-max-width:900px;
-height:400px;
-border:none;
-border-radius:20px;
-}
-
-/*  WHATS  */
-
-.whatsapp{
-position:fixed;
-bottom:30px;
-right:30px;
-z-index:999;
-}
-
-.whatsapp img{
-width:60px;
-transition:.4s;
-}
-
-.whatsapp img:hover{
-transform:scale(1.2);
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-<img src="logo.PNG">
-<div>
-<a onclick="goTo('home')">Home</a>
-<a onclick="goTo('servicos')">Serviços</a>
-<a onclick="goTo('localizacao')">Localização</a>
-<a onclick="goTo('contato')">Contato</a>
-</div>
+<header class="header">
+
+<div class="container-header">
+
+<img src="img/logo.PNG" class="logo">
+
+<nav class="menu">
+<a href="#home">Home</a>
+<a href="#servicos">Serviços</a>
+<a href="#local">Localização</a>
+<a href="#contato">Contato</a>
+<a href="https://wa.me/5581984970358" class="btn-menu">WhatsApp</a>
 </nav>
 
+</div>
+
+</header>
+
 <!-- HERO -->
-<div id="home" class="hero">
 
-<h1>RITA MOURA BIKE</h1>
+<section id="home" class="hero">
 
-<button class="btn" onclick="goTo('servicos')">
-Ver Serviços
-</button>
+<div class="overlay">
+
+<h1>Rita e Moura Bike</h1>
+
+<p>
+Venda de bicicletas, peças e assistência especializada.
+</p>
+
+<a href="https://wa.me/5581984970358" class="btn">
+Agendar no WhatsApp
+</a>
 
 </div>
 
-<!-- SERVIÇOS -->
-<section id="servicos">
+</section>
 
-<h1>Serviços</h1>
+<!-- SERVIÇOS -->
+
+<section id="servicos" class="servicos">
+
+<h2>Nossos Serviços</h2>
 
 <div class="cards">
 
 <div class="card">
-<h3>Revisão Completa</h3>
-<p>Ajuste total da bicicleta.</p>
+<h3>🔧 Oficina Especializada</h3>
+<p>Revisões completas e manutenção profissional.</p>
 </div>
 
 <div class="card">
-<h3>Troca de Peças</h3>
-<p>Peças originais e instalação.</p>
+<h3>🚴 Venda de Bikes</h3>
+<p>Bicicletas novas e usadas.</p>
 </div>
 
 <div class="card">
-<h3>Regulagem</h3>
-<p>Freios e marchas precisos.</p>
+<h3>⚙️ Peças Premium</h3>
+<p>Acessórios e upgrades para sua bike.</p>
 </div>
 
 </div>
 
 </section>
 
-<!-- LOCALIZAÇÃO -->
-<section id="localizacao">
+<!-- MAPA -->
 
-<h1>Localização</h1>
+<section id="local" class="mapa">
 
-<iframe src="https://www.google.com/maps?q=Recife&output=embed"></iframe>
+<h2>Onde Estamos</h2>
 
-</section>
-
-<!-- CONTATO -->
-<section id="contato">
-
-<h1>Contato</h1>
-
-<button class="btn" onclick="openWhats()">
-Chamar no WhatsApp
-</button>
+<iframe
+src="https://www.google.com/maps?q=Av.+Engenho+Serra+Verde,+690,+Recife&output=embed">
+</iframe>
 
 </section>
 
-<!-- WHATS FLOAT -->
-<div class="whatsapp">
-<a href="https://wa.me/5581999999999" target="_blank">
-<img src="logo.PNG">
-</a>
-</div>
+<footer id="contato">
 
-<script>
+<p>📍 Av. Engenho Serra Verde, 690 – Ibura</p>
+<p>📞 (81) 98497-0358</p>
 
-/*  SCROLL APPLE REAL  */
+</footer>
 
-function goTo(id){
+<a class="whatsapp" href="https://wa.me/5581984970358">💬</a>
 
-const target = document.getElementById(id);
-
-window.scrollTo({
-top: target.offsetTop - 70,
-behavior:"smooth"
-});
-
-}
-
-/*  ANIMAÇÃO SCROLL  */
-
-const observer = new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-},{threshold:.25});
-
-document.querySelectorAll("section").forEach(sec=>{
-observer.observe(sec);
-});
-
-/*  PARALLAX FOTO  */
-
-window.addEventListener("scroll",()=>{
-
-const hero = document.querySelector(".hero");
-
-let scroll = window.scrollY;
-
-hero.style.setProperty(
-"--scroll",
-scroll
-);
-
-hero.querySelector("::before");
-
-});
-
-/*  WHATS  */
-
-function openWhats(){
-window.open("https://wa.me/5581999999999","_blank");
-}
-
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
