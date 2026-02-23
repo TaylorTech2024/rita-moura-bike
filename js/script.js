@@ -1,40 +1,31 @@
-// SCROLL SUAVE ESTILO APPLE
+// PRELOADER
+window.addEventListener("load",()=>{
+document.body.classList.add("loaded");
+});
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
+// SCROLL SUAVE
+document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
 anchor.addEventListener("click", function(e){
-
 e.preventDefault();
-
-document.querySelector(this.getAttribute("href"))
-.scrollIntoView({
-behavior:"smooth"
+document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth"});
 });
-
 });
-
-});
-
 
 // ANIMAÇÃO AO ROLAR
-
-const elementos = document.querySelectorAll(".card");
-
+const elementos=document.querySelectorAll(".card, section");
 function animar(){
-
-const topoTela = window.innerHeight * 0.85;
-
+const topo=window.innerHeight*0.85;
 elementos.forEach(el=>{
-
-const posicao = el.getBoundingClientRect().top;
-
-if(posicao < topoTela){
-el.classList.add("mostrar");
-}
-
+const pos=el.getBoundingClientRect().top;
+if(pos<topo){el.classList.add("mostrar");}
 });
-
 }
-
-window.addEventListener("scroll", animar);
+window.addEventListener("scroll",animar);
 animar();
+
+// BOTÃO WHATSAPP
+document.querySelectorAll(".btn, .btn-menu").forEach(btn=>{
+btn.addEventListener("click",()=>{
+window.open("https://wa.me/5581984970358","_blank");
+});
+});
