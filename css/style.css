@@ -13,10 +13,10 @@ scroll-behavior:smooth;
 position:fixed;
 top:0;
 width:100%;
-background:#000;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
 padding:15px 0;
 z-index:1000;
-box-shadow:0 2px 15px rgba(0,0,0,.6);
 }
 
 .container-header{
@@ -50,29 +50,27 @@ padding:10px 18px;
 border-radius:30px;
 }
 
-/* HERO */
+/* HERO APPLE */
 
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.85)),
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
 url("../img/loja.JPEG") center/cover no-repeat;
-background-attachment:fixed;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
 }
 
+.overlay{
+animation:fadeUp 1.2s ease;
+}
+
 .hero h1{
 font-size:60px;
 color:#FFD000;
-}
-
-.hero p{
-font-size:18px;
-max-width:600px;
-margin:auto;
+margin:0;
 }
 
 .btn{
@@ -83,13 +81,13 @@ text-decoration:none;
 border-radius:40px;
 font-weight:bold;
 display:inline-block;
-margin-top:25px;
-transition:.4s;
+margin-top:20px;
+transition:.3s;
 }
 
 .btn:hover{
 transform:scale(1.05);
-box-shadow:0 0 25px #FFD000;
+box-shadow:0 0 20px #FFD000;
 }
 
 /* SERVIÇOS */
@@ -111,14 +109,19 @@ background:#000;
 padding:25px;
 border-radius:12px;
 width:280px;
-border:1px solid transparent;
-transition:.5s;
+transition:.4s;
+opacity:0;
+transform:translateY(60px);
+}
+
+.card.mostrar{
+opacity:1;
+transform:translateY(0);
 }
 
 .card:hover{
-transform:translateY(-15px) scale(1.03);
+transform:translateY(-10px);
 border:1px solid #FFD000;
-box-shadow:0 20px 40px rgba(255,208,0,.25);
 }
 
 /* MAPA */
@@ -135,19 +138,12 @@ border:none;
 border-radius:12px;
 }
 
-/* CONTATO */
-
-.contato{
-padding:80px 20px;
-text-align:center;
-}
-
 /* FOOTER */
 
 footer{
 background:#000;
-padding:20px;
 text-align:center;
+padding:30px;
 }
 
 /* WHATSAPP */
@@ -162,26 +158,11 @@ font-size:28px;
 padding:15px;
 border-radius:50%;
 text-decoration:none;
-animation:pulse 2s infinite;
 }
 
-/* ANIMAÇÕES SCROLL */
+/* ANIMAÇÕES */
 
-.animar{
-opacity:0;
-transform:translateY(80px) scale(.98);
-transition:
-opacity 1.2s ease,
-transform 1.2s cubic-bezier(.17,.67,.3,1);
-}
-
-.animar.ativo{
-opacity:1;
-transform:translateY(0) scale(1);
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.1);}
-100%{transform:scale(1);}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
 }
